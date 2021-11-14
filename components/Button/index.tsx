@@ -1,0 +1,1 @@
+export const Button = () => <button>A Button</button>
