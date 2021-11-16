@@ -9,7 +9,7 @@ const Home: NextPage = () => {
     <Layout>
       <ProfileImage />
       <nav className="container mx-auto p-3 flex justify-center">
-        <NavButton text='Professional' path='/pro' type="primary"/>
+        <NavButton text='Professional' path='/professional' type="primary"/>
         <NavButton text='Personal' path='/personal'type="outline" />
       </nav>
     </Layout>
