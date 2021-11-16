@@ -13,7 +13,7 @@ const NavButtonStyles = {
 }
 
 const NavButton:React.FC<NavButton> = ({ text, path, type }) => {
-    let className = `nav-btn p-3 mx-1 rounded ${NavButtonStyles[type]}`
+    let className = `nav-btn p-3 mx-1 rounded text-md ${NavButtonStyles[type]}`
 
     return (
         <Link href={path}>
