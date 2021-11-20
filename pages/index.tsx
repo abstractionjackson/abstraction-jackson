@@ -25,7 +25,9 @@ export default Home
 
 export async function getStaticProps() {
   try {
-      const res = await fetch('http://localhost:3000/api/v1/home');
+      const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.NEXT_APP_DOMAIN;
+      const endpoint = '/api/v1/home'
+      const res = await fetch(endpoint);
       const { links, tagline, siteTitle } = await res.json();
       return {
           props: {
