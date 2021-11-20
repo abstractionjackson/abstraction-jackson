@@ -1,19 +1,42 @@
 import type { NextPage } from 'next'
 
 import { Layout } from '../components/Layout'
-import ProfileImage from '../components/ProfileImage'
-import NavButton from '../components/NavButton'
+import { NavLinkData } from './api/v1/home'
 
-const Home: NextPage = () => {
+const Home: NextPage<{
+  links: NavLinkData[],
+  tagline: string,
+  siteTitle: string
+}> = ({
+  links,
+  tagline='',
+  siteTitle='Abstraction Jackson'
+}) => {
   return (
-    <Layout>
-      <ProfileImage />
-      <nav className="container mx-auto p-3 flex justify-center">
-        <NavButton text='Professional' path='/professional' type="primary"/>
-        <NavButton text='Personal' path='/personal'type="outline" />
-      </nav>
+    <Layout headerText={siteTitle} navBarLinks={links} taglineText={tagline}>
+      {
+        null
+      }
     </Layout>
   )
 }
 
 export default Home
+
+export async function getStaticProps() {
+  try {
+      const res = await fetch('http://localhost:3000/api/v1/home');
+      const { links, tagline, siteTitle } = await res.json();
+      return {
+          props: {
+              links,
+              tagline,
+              siteTitle
+          }
+      }
+  } catch (error) {
+      return {
+          notFound: true
+      }
+  }
+}

@@ -4,7 +4,10 @@ module.exports = {
   images: {
     domains: [
       'external-content.duckduckgo.com',
-      'wgno.com'
+      'wgno.com',
+      'www.arcgis.com',
+      'www.ghxseed.com',
+      'sendablast.io'
     ]
   }
 }
