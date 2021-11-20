@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
+  images: {
+    domains: [
+      'external-content.duckduckgo.com',
+      'wgno.com',
+      'www.arcgis.com',
+      'www.ghxseed.com',
+      'sendablast.io'
+    ]
+  }
 }
