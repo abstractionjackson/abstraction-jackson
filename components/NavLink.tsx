@@ -1,8 +1,10 @@
 import Link from 'next/link';
-import { NavLinkData } from '../pages/api/v1/nav';
 
 
-const NavLink:React.FC<NavLinkData> = ({ text, href }) => {
+const NavLink:React.FC<{
+    text: string,
+    href: string
+}> = ({ text, href }) => {
 
     return (
         <Link href={href}>
