@@ -3,15 +3,18 @@ import type { NextPage } from 'next'
 import { Layout } from '../components/Layout'
 import { NavLinkData } from './api/v1/home'
 
-const Home: NextPage<{
-  links: NavLinkData[],
-  tagline: string,
-  siteTitle: string
-}> = ({
-  links,
-  tagline='',
-  siteTitle='Abstraction Jackson'
-}) => {
+const tagline:string = 'When the rabbit hole grows deep...'
+
+const siteTitle:string = "Abstraction Jackson"
+
+const links = [
+    new NavLinkData('/', 'Home'),
+    new NavLinkData('/follow', 'Follow'),
+    new NavLinkData('/about', 'About'),
+    new NavLinkData('/portfolio', "Portfolio")
+]
+
+const Home: NextPage = () => {
   return (
     <Layout headerText={siteTitle} navBarLinks={links} taglineText={tagline}>
       {
@@ -22,23 +25,3 @@ const Home: NextPage<{
 }
 
 export default Home
-
-export async function getStaticProps() {
-  try {
-      const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.NEXT_APP_DOMAIN;
-      const endpoint = '/api/v1/home'
-      const res = await fetch(endpoint);
-      const { links, tagline, siteTitle } = await res.json();
-      return {
-          props: {
-              links,
-              tagline,
-              siteTitle
-          }
-      }
-  } catch (error) {
-      return {
-          notFound: true
-      }
-  }
-}
