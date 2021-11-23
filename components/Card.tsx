@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-import CardDAta from '../utils/Card';
+import { ICard } from '../utils/Card';
 
-export const Card:React.FC<CardDAta> = ({
+export const Card:React.FC<ICard> = ({
     link: {
         linkText,
         href
