@@ -1,5 +1,6 @@
 import { NavLinkData } from "../utils/Page"
-import { NavBarHeader } from "./NavBarHeader"
+import NavBar from '../components/NavBar'
+
 export const Layout: React.FC<{
     headerText?: string
     descriptionText?: string
@@ -12,10 +13,10 @@ export const Layout: React.FC<{
  }) => {
     return (
         <div className="pt-3 px-3 flex flex-col justify-center h-full w-full overflow-auto">
-            <NavBarHeader
+            <NavBar
                 headerText={headerText}
                 descriptionText={descriptionText}
-                navBarLinks={navBarLinks}
+                links={navBarLinks}
             />
             { children }
         </div>

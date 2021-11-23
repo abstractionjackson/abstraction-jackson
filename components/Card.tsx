@@ -28,7 +28,7 @@ export const Card:React.FC<CardDAta> = ({
         }}>
             <a href={src}>
 
-            <Image src={src} height={height} width={width} layout='responsive' />
+            <Image src={src} height={height} width={width} layout='responsive' alt={alt} />
             </a>
         </div>
     </div>
