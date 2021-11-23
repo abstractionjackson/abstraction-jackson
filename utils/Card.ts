@@ -1,6 +1,5 @@
 
-
-interface ICard {
+export interface ICard {
     link: CardLink
     image:CardImage
     text:string
@@ -19,12 +18,3 @@ type CardImage = {
         containerWidth: string
     }
 }
-class Card {
-    constructor(
-        public link:CardLink,
-        public text: string,
-        public image: CardImage
-    ){}
-}
-
-export default Card;

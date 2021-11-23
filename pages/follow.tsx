@@ -3,6 +3,8 @@ import { Layout } from "../components/Layout"
 import LinkImSoc from '../components/LinkImageSocial'
 import { getPage } from "../utils/s3/getPage";
 import SocialMediaLink from "../utils/SocialMediaLink";
+import follow from '../public/page/follow.json'
+
 
 interface IFollowProps {
     header: string;
@@ -10,7 +12,7 @@ interface IFollowProps {
 }
 
 export const Follow: NextPage<IFollowProps> = ({
-    header,
+    header = 'Follow',
     links=[]
 }) => (
     <div className="max-w-lg mx-auto w-full">
@@ -23,19 +25,25 @@ export const Follow: NextPage<IFollowProps> = ({
 export default Follow;
 
 export async function getStaticProps() {
-    let response;
-    const slug = 'follow';
-    try {
-        response = await getPage(slug);
-        if ( response ) {
-            return {
-                props: JSON.parse(response)
-            }
-        }
-    } catch (error) {
-        console.error(error)
         return {
-            notFound: true
+            props:follow
         }
-    }
 }
+
+// export async function getStaticProps() {
+//     let response;
+//     const slug = 'follow';
+//     try {
+//         response = await getPage(slug);
+//         if ( response ) {
+//             return {
+//                 props: JSON.parse(response)
+//             }
+//         }
+//     } catch (error) {
+//         console.error(error)
+//         return {
+//             notFound: true
+//         }
+//     }
+// }
