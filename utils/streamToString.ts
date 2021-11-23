@@ -1,5 +1,5 @@
-export const streamToString = (stream:any) =>
-new Promise((resolve, reject) => {
+export const streamToString = (stream:any):Promise<string> =>
+new Promise<string>((resolve, reject) => {
   const chunks:any = [];
   stream.on("data", (chunk:any) => chunks.push(chunk));
   stream.on("error", reject);

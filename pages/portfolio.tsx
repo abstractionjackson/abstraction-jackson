@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { Layout } from "../components/Layout";
 import { Card } from "../components/Card";
 import CardData from "../utils/Card";
 
@@ -48,15 +47,12 @@ export const Portfolio:NextPage = () => {
             }
         })
     ]
-    // TODO - lift layout props to store
     return (
-        <Layout headerText={headerText} taglineText={tagline} navBarLinks={[{text:'Home', href:'/'}]}>
-            <div className="container max-w-lg mx-auto pt-3">
-                {
-                    cards.map((data,key) => <Card key={key} {...data} />)
-                }
-            </div>
-        </Layout>
+        <div className="container max-w-lg mx-auto pt-3">
+            {
+                cards.map((data,key) => <Card key={key} {...data} />)
+            }
+        </div>
     )
 }
 

@@ -1,0 +1,35 @@
+{
+    "header": "Follow",
+    "links": [
+        {
+            "icon": "twitter.svg",
+            "id": "whycertainly",
+            "isHandle": true,
+            "href": "https://twitter.com/whycertainly"
+        },
+        {
+            "icon": "spotify.svg",
+            "id": "1219301139",
+            "isHandle": false,
+            "href": "https://open.spotify.com/user/1219301139"
+        },
+        {
+            "icon": "github.svg",
+            "id": "abstractionjackson",
+            "isHandle": true,
+            "href": "https://github.com/abstractionjackson"
+        },
+        {
+            "icon": "instagram.svg",
+            "id": "m.jacqua",
+            "isHandle": false,
+            "href": "https://www.instagram.com/m.jacqua/"
+        },
+        {
+            "icon": "strava.svg",
+            "id":"",
+            "isHandle": false,
+            "href": "https://www.strava.com/athletes/7088902"
+        }
+    ]
+}

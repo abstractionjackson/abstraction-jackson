@@ -1,17 +1,16 @@
-import { NavLinkData } from "../pages/api/v1/home"
+import { NavLinkData } from "../utils/Page";
 import Header from "./Header";
 import { NavBar } from "./NavBar";
-import { Tagline } from "./Tagline";
 
 type NavBarHeaderProps = {
     navBarLinks?: NavLinkData[];
     headerText: string;
-    taglineText: string;
+    descriptionText: string;
 }
 export const NavBarHeader:React.FC<NavBarHeaderProps> = ({
     navBarLinks=[],
     headerText,
-    taglineText
+    descriptionText
 }) => {
     // do stuff
     return (
@@ -21,7 +20,7 @@ export const NavBarHeader:React.FC<NavBarHeaderProps> = ({
 
             <NavBar links={navBarLinks} />
 
-            <Tagline text={taglineText} />
+            <div className="text-gray-500 italic">{descriptionText}</div>
 
         </div>
     )

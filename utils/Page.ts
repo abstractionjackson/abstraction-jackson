@@ -1,18 +1,30 @@
 import { PutObjectCommand } from "@aws-sdk/client-s3";
+
 import client from "../config/s3.config";
 import { makeSlug } from "./makeSlug";
 
-class Post {
-    public slug: string
+export class NavLinkData {
+    public href:string;
+    public text:string;
+    constructor(href='/',text=''){
+        this.href = href;
+        this.text = text;
+    }
+}
+
+class Page {
     constructor(
-        public title: string
+        public header: string,
+        public description: string,
+        public slug?: string,
+        public navBarLinks?: NavLinkData[]
     ){
-        this.slug = makeSlug(this.title)
-    };
+        this.slug = slug || makeSlug(header);
+    }
     async put() {
         const params = {
             Bucket: "abstraction-jackson",
-            Key: `post/${this.slug}.json`,
+            Key: `page/${this.slug}.json`,
             Body: JSON.stringify(this)
         };
 
@@ -20,11 +32,13 @@ class Post {
 
         try {
             const res = await client.send(command);
+            console.log(res);
             return res;
         } catch (error) {
             throw error;
         }
     }
-}
 
-export default Post;
+};
+
+export default Page;
