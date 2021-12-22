@@ -1,0 +1,15 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    background-color: #f4f4f4;
+}
+
+a {
+    color: rgb(30 64 175)
+}
+a:hover {
+    color: rgb(30 58 138)
+}
