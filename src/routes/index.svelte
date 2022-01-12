@@ -5,4 +5,4 @@
 <svelte:head>
     <title>{SITE_TITLE}</title>
 </svelte:head>
-<Hero headingText="Welcome!" subHeadingText="Abstraction Jackson is home online to the software developer, cyclist, and full-throated amatuer singer Jackson Galan" />
+<Hero headingText="Welcome!" subHeadingText="Abstraction Jackson is home online to software developer Jackson Galan" />
